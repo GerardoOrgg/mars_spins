@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión | Mars Spins</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <div class="left-panel">
+    <div class="left-panel-content">
+      <span class="brand-label">Mars Spins</span>
+
+      <h1>Bienvenido de nuevo</h1>
+
+      <form id="form-login">
+        <div class="form-group">
+          <label class="field-label" for="usuario">Usuario</label>
+          <input class="field-input" id="usuario" type="text" placeholder="Tu usuario" required />
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="password">Contraseña</label>
+          <input class="field-input" id="password" type="password" placeholder="••••••••" required />
+        </div>
+
+        <p class="form-error" id="error"></p>
+
+        <div class="form-actions">
+          <button class="btn-gold" type="submit">Iniciar sesión</button>
+        </div>
+      </form>
+
+      <p class="auth-footer">
+        ¿No tienes cuenta? <a href="registro.html">Regístrate</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="right-panel"></div>
+
+  <script src="js/api.js"></script>
+  <script>
+    document.getElementById('form-login').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const error = document.getElementById('error');
+      error.textContent = '';
+      try {
+        await api('/api/login', {
+          usuario: document.getElementById('usuario').value,
+          contrasena: document.getElementById('password').value
+        });
+        window.location.href = 'principal.html';
+      } catch (err) {
+        error.textContent = err.message;
+      }
+    });
+  </script>
+</body>
+</html>

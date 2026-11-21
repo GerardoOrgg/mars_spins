@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.left-panel {
+  width: 50%;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 50px;
+  background: var(--bg);
+  position: relative;
+  z-index: 2;
+}
+
+.left-panel-content {
+  width: 100%;
+  max-width: 380px;
+}
+
+.left-panel .brand-label {
+  display: block;
+  margin-bottom: 36px;
+}
+
+.left-panel h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  color: var(--text);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  margin-top: 8px;
+}
+
+.auth-footer {
+  margin-top: 22px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.right-panel {
+  width: 50%;
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+  background: #0c0d13 url('../capturas/login_ruleta.png') center / cover no-repeat;
+}

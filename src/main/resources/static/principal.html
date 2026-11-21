@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lobby | Mars Spins</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/principal.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="brand-label nav-brand">Mars Spins</span>
+    </div>
+
+    <div class="nav-right">
+      <div class="balance-chip">
+        <div class="balance-icon">$</div>
+        <div class="balance-info">
+          <span class="balance-lbl">Fichas Ficticias</span>
+          <span class="balance-val">$—</span>
+        </div>
+      </div>
+
+      <div class="user-pill">
+        <div class="user-avatar">👤</div>
+        <span data-usuario>…</span>
+      </div>
+
+      <button class="btn-salir" onclick="cerrarSesion()">Salir</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+  </section>
+
+  <section class="section" id="juegos">
+    <h2 class="section-hdr">Juegos</h2>
+
+    <div class="games-grid">
+
+      <div class="game-card">
+        <div class="game-thumb thumb-espacial">
+          <img class="game-art" src="img/juegos/ruleta.svg" alt="Ruleta" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">Ruleta</div>
+          <button class="btn-play" onclick="window.location.href='ruleta.html'">Jugar</button>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <div class="game-thumb thumb-bj">
+          <img class="game-art" src="img/juegos/blackjack.svg" alt="Black Jack" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">Black Jack</div>
+          <button class="btn-play" onclick="window.location.href='blackjack.html'">Jugar</button>
+        </div>
+      </div>
+
+      <div class="game-card proximamente">
+        <div class="game-thumb thumb-slots">
+          <img class="game-art" src="img/juegos/tragamonedas.svg" alt="Tragamonedas" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">Tragamonedas</div>
+          <button class="btn-play" disabled>Próximamente</button>
+        </div>
+      </div>
+
+      <div class="game-card proximamente">
+        <div class="game-thumb thumb-dados">
+          <img class="game-art" src="img/juegos/dados.svg" alt="Dados" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">Dados</div>
+          <button class="btn-play" disabled>Próximamente</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid"></div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script>
+
+    cargarCuenta();
+  </script>
+
+</body>
+</html>

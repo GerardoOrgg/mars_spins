@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruleta | Mars Spins</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/ruleta.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="principal.html" class="btn-back">← Volver al Lobby</a>
+      <span class="brand-label">Mars Spins &bull; Ruleta</span>
+    </div>
+
+    <div class="nav-right">
+      <div class="balance-chip">
+        <div class="balance-icon">$</div>
+        <div class="balance-info">
+          <span class="balance-lbl">Fichas Ficticias</span>
+          <span class="balance-val">$—</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mesa">
+
+    <section class="zona-resultado">
+
+      <div class="rueda-wrap">
+        <div class="puntero"></div>
+        <svg class="rueda" id="rueda" viewBox="-110 -110 220 220"></svg>
+        <div class="pista" id="pista"><div class="bolita" id="bolita"></div></div>
+        <div class="bola espera" id="bola">?</div>
+      </div>
+      <div class="historial-wrap">
+        <span class="mini-lbl">Últimos resultados</span>
+        <div class="historial" id="historial"></div>
+      </div>
+    </section>
+
+    <section class="panel-apuesta">
+      <div class="bloque">
+        <span class="mini-lbl">1. Elige color (paga 2x)</span>
+        <div class="colores">
+          <button class="btn-color rojo activo" data-color="rojo">Rojo</button>
+          <button class="btn-color negro" data-color="negro">Negro</button>
+        </div>
+      </div>
+
+      <div class="bloque">
+        <span class="mini-lbl">2. Elige fichas</span>
+        <div class="chips-row">
+          <div class="chip c10"  data-valor="10">10</div>
+          <div class="chip c50"  data-valor="50">50</div>
+          <div class="chip c100" data-valor="100">100</div>
+          <div class="chip c200" data-valor="200">200</div>
+          <div class="chip c500" data-valor="500">500</div>
+        </div>
+      </div>
+
+      <div class="bloque">
+        <span class="mini-lbl">Apuesta</span>
+        <div class="apuesta-row">
+          <span class="apuesta-monto" id="apuesta">$0</span>
+          <button class="btn-limpiar" id="btn-limpiar">Quitar</button>
+        </div>
+      </div>
+    </section>
+
+    <button class="btn-gold btn-girar" id="btn-girar" disabled>Girar ruleta</button>
+    <div class="msg-resultado info" id="mensaje">Elige un color y tus fichas</div>
+
+    <section class="arreglo">
+      <span class="mini-lbl">Estructura: arreglo <code>ruleta[37]</code> · el servidor genera un índice al azar y accede en O(1)</span>
+      <div class="arreglo-grid" id="arreglo"></div>
+    </section>
+
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ruleta.js"></script>
+</body>
+</html>
